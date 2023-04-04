@@ -2,10 +2,6 @@
   <img alt="Logo" src="./public/images/logo.svg" alt="ig.News">
 </h1>
 
-<h1 align="center">
-    Ignews 
-</h1>
-
 <p align="center">
  <a href="#sobre-o-projeto">Sobre o Projeto</a> •
  <a href="#tecnologias">Tecnologias Usadas</a> •
