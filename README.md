@@ -13,7 +13,6 @@
 
 O projeto foi desenvolvido como pratica no módulo Front-end JAMStack [Ignite da Rocketseat](https://rocketseat.com.br/)
 
----
 
 ## Tecnologias Usadas
 
@@ -27,7 +26,6 @@ Abaixo as tecnologias utilizadas para construção da aplicação
 - [FaunaDB](https://fauna.com/)
 - [Prismic CMS](https://prismic.io/)
 
----
 
 ## Requisitos
 
@@ -37,13 +35,11 @@ Criar conta e configurar os serviços externos:
 - [FaunaDB](https://fauna.com/)
 - [Prismic CMS](https://prismic.io/)
 
----
 
 ## Licença
 
 Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais informações.
 
----
 
 ## Autor
 
