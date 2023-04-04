@@ -3,7 +3,7 @@ import { stripe } from "../../../services/stripe";
 
 import { authOptions } from '../../../services/nextAuth'
 import { getServerSession } from "next-auth/next"
-import { getUser, updateUser } from "../../../services/fauna";
+import { getUserByEmail, updateUserCustomerId } from "../../../services/fauna";
 
 type User = {
   ref: {
@@ -20,7 +20,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     const session = await getServerSession(req, res, authOptions)
 
-    const user = await getUser<User>(session?.user?.email as string)
+    const user = await getUserByEmail<User>(session?.user?.email!)
 
     let customerId = user.data.stripe_customer_id
 
@@ -29,7 +29,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         email: session?.user?.email as string,
       })
 
-      updateUser(user.ref.id, stripeCustomer.id)
+      updateUserCustomerId(user.ref.id, stripeCustomer.id)
       customerId = stripeCustomer.id
     }
 
@@ -47,7 +47,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       cancel_url: process.env.STRIPE_CANCEL_URL as string,
     })
 
-    return res.status(200).json({ sessionId: StripeCheckoutSession.id})
+    return res.status(200).json({ StripeCheckoutSessionId: StripeCheckoutSession.id})
   } else {
     res.setHeader('Allow', 'POST');
     res.status(405).end('Method not allowed');

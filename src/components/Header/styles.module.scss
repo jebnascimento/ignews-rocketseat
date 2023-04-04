@@ -15,7 +15,7 @@
   nav {
     margin-left: 5rem;
     height: 5rem;
-    
+
     a {
       display: inline-block;
       position: relative;
@@ -30,7 +30,7 @@
         color: var(--white);
       }
 
-      & + a {
+      &+a {
         margin-left: 2rem;
       }
 
